@@ -8,7 +8,7 @@
 
 ## Current Guide
 
- - [Youtube]([https://github.com/GinoCanessa](https://www.youtube.com/watch?v=m2O6HiA1Z7g&list=PLsR-zcO--dypUxuALrmuq70aM-VGX_ql1&index=1))
+ - [Youtube](https://www.youtube.com/watch?v=m2O6HiA1Z7g&list=PLsR-zcO--dypUxuALrmuq70aM-VGX_ql1&index=1)
  - [GitHub](https://github.com/GinoCanessa)
 
 ---
