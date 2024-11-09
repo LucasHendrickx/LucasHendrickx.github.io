@@ -15,14 +15,62 @@
 
 ## First Requests
 
-### Get Metadata of Server
+### GET Metadata of Server
 
-```C#
-var client = new HttpClient();
-var request = new HttpRequestMessage(HttpMethod.Get, "http://hapi.fhir.org/baseR5/metadata");
-request.Headers.Add("Accept", "application/fhir+json");
-var response = await client.SendAsync(request);
-response.EnsureSuccessStatusCode();
-Console.WriteLine(await response.Content.ReadAsStringAsync());
+```cURL
+curl \
+  --location 'http://hapi.fhir.org/baseR5/metadata' \
+  --header 'Accept: application/fhir+json'
 ```
+
+
+### GET All Patients
+
+```cURL
+curl \
+  --location 'http://hapi.fhir.org/baseR5/Patient' \
+  --header 'Accept: application/fhir+json'
+```
+
+### GET Specific Patient
+
+```cURL
+curl \
+  --location 'http://hapi.fhir.org/baseR5/Patient/787004' \
+  --header 'Accept: application/fhir+json'
+```
+
+
+### POST new Patient
+
+```cURL
+curl \
+  --location 'http://hapi.fhir.org/baseR5/Patient' \
+  --header 'Accept: application/fhir+json' \
+  --header 'Content-Type: application/fhir+json' \
+  --data '{
+            "resourceType":"Patient",
+            "text":{
+              "status":"generated",
+              "div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>LUCAS HENDRICKX </b> (no stated gender), DoB Unknown ( Internal Identifier:\u00a0AB60001)</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr></table></div>"
+            },
+            "identifier":[
+              {
+                "type":{
+                  "text":"Internal Identifier"
+                },
+                "value":"AB60001"
+              }
+            ],
+            "active":true,
+            "name":[
+              {
+                "family":"HENDRICKX",
+                "given":["LUCAS"]
+              }
+            ]
+          }'
+```
+
+
 
