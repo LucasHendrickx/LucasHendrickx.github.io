@@ -2,4 +2,3 @@ remote_theme: pages-themes/cayman@v0.2.0
 
 title: Journey Into FHIR
 description: This will give an overview on how you can start developing in FHIR.
-show_downloads: true
